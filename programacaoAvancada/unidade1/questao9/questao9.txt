@@ -1,0 +1,4 @@
+Para o caso de x ser um inteiro podemos vê que ao fazer x+1 o numero será atualizado em  4 byte.
+Para o caso de y ser um char podemos vê que ao fazer y+1 o numero será atualizado em 1 byte.
+Para o caso de z ser um double podemos vê que ao fazer z+1 o numero será atualizado em 8 byte.
+Para o caso de w ser um float podemos vê que ao fazer w+1 o numero será atualizado em 4 byte.
