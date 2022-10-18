@@ -13,8 +13,8 @@ private:
   int nx,ny,nz; // Dimensions
   float r,g,b,a; // Current drawing color
 public:
-  Sculptor(int _nx, int _ny, int _nz);//Construct of class
-  ~Sculptor(); // Destruct of class
+  Sculptor(int _nx, int _ny, int _nz);
+  ~Sculptor();
   void setColor(float r, float g, float b, float a);
   void putVoxel(int x, int y, int z);
   void cutVoxel(int x, int y, int z);
@@ -27,4 +27,4 @@ public:
   void writeOFF(const char* filename);
 };
 
-#endif // SCULPTOR_H
+#endif 

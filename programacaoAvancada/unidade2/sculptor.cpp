@@ -1,17 +1,18 @@
 //sculptor.cpp
-#include "sculptor.h"
-#include <cmath>
 #include <iostream>
+#include <fstream>
+#include <cmath>
+#include "sculptor.h"
+#include <queue>
+#include <string>
 
 Scupltor::Sculptor(int _nx, int _ny, int _nz) {
   // Construtor da classe
   std::cout << "Inciando os Construtores!! " << std::endl
-  this->x = _nx;
-  this->y = _ny;
-  this->z = _nz;
+  x = _nx;
+  y = _ny;
+  z = _nz;
   r = g = b = a = 0.5;
-  side = 0.5;
-
 
   //alocando Dinanicamente o cubo
   v = new Voxel**[x];
@@ -22,7 +23,7 @@ Scupltor::Sculptor(int _nx, int _ny, int _nz) {
 
   for(int i = 0;i < x;i++){
       for(j = 0;j < y;j++){
-          V[i][j] = new Voxel*[z];
+          v[i][j] = new Voxel*[z];
 
       }
   }
@@ -44,21 +45,48 @@ Scupltor::~Sculptor(int _nx, int _ny, int _nz) {
 };
 
 void setColor(float r, float g, float b, float a){
-  this->r = r; //red
-  this->g = g; //green
-  this->b = b; //blue
-  this->a = a; //Transparência
+  r = r; //red
+  g = g; //green
+  b = b; //blue
+  a = a; //Transparência
 };
 
 void putVoxel(int _nx, int _ny, int _nz){
-  if((_nx < x && _nx > 0) && (_ny < y && _ny > 0) && (_nz < z && _nz > 0)){
-      v[_nx][_ny][_nz].r = r;
-      v[_nx][_ny][_nz].g = g;
-      v[_nx][_ny][_nz].b = b;
-      v[_nx][_ny][_nz].a = a;
-      v[_nx][_ny][_nz].isOn = true;
-      
-
+  if((x < _nx && x > 0) && (y < _ny && y > 0) && (z < _nz && z > 0)){
+      v[x][y][z].r = r;
+      v[x][y][z].g = g;
+      v[x][y][z].b = b;
+      v[x][y][z].a = a;
+      v[x][y][z].isOn = true;
   }
 };
 
+void Sculptor::cutVoxels(void)
+{
+    std::queue<int> q;
+    int lx,ly,lz;
+    for(int x=1; x<nx-1; x++){
+        for(int y=1; y<ny-1; y++){
+            for(int z=1; z<nz-1; z++){
+                if((v[x][y][z].isOn == true) &&
+                (v[x+1][y][z].isOn == true) &&
+                (v[x-1][y][z].isOn == true) &&
+                (v[x][y+1][z].isOn == true) &&
+                (v[x][y-1][z].isOn == true) &&
+                (v[x][y][z+1].isOn == true) &&
+                (v[x][y][z-1].isOn == true)){
+                    q.push(x);
+                    q.push(y);
+                    q.push(z);
+                }
+            }
+        }
+    }
+    while(!q.empty()){
+        lx=q.front(); q.pop();
+        ly=q.front(); q.pop();
+        lz=q.front(); q.pop();
+        v[lx][ly][lz].isOn = false;
+    }
+    std::cout<< "\n> Limpando Voxel !\n" << std::endl;
+}
