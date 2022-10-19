@@ -83,29 +83,29 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
 //remove um quadrado/caixa
 void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
       for(int i= x0;i < x1;i++){
-      for(int j = y0;j < y1;j++){
-        for(int k = z0;k < z1;k++){
-          cutVoxel(i,j,k);
-        }
+        for(int j = y0;j < y1;j++){
+          for(int k = z0;k < z1;k++){
+            cutVoxel(i,j,k);
+          }
       }
     }
 };
 
- void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
-  //r^2 = x^2 + y^2 + z^2 calculo do raio pela equação da esfera;
-  double dist; // variavel para teste do centro e raio
-  for(int i= 0;i < nx;i++){
-    for(int j = 0;j < ny;j++){
-      for(int k = 0;k < nz;k++){
-        dist = pow(i - xcenter,2) + pow(j - ycenter,2) + pow(k - zcenter,2);
-        if(dist <= pow(radius, 2)){
-          putVoxel(i,j,k);
-        }
+void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
+//r^2 = x^2 + y^2 + z^2 calculo do raio pela equação da esfera;
+double dist; // variavel para teste do centro e raio
+for(int i= 0;i < nx;i++){
+  for(int j = 0;j < ny;j++){
+    for(int k = 0;k < nz;k++){
+      dist = pow(i - xcenter,2) + pow(j - ycenter,2) + pow(k - zcenter,2);
+      if(dist <= pow(radius, 2)){
+        putVoxel(i,j,k);
       }
     }
   }
+}
 
- };
+};
 
  void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   //r^2 = x^2 + y^2 + z^2 calculo do raio pela equação da esfera;
@@ -123,81 +123,165 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
 
  };
 
- void putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
+void putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
+  // e = (x - x0)^2/a^2 + (y - y0)^2/b^2 + (z - z0)^2/c^2  => formula da elipsoide e "e <= 1"
+  double dist; // variavel para teste do centro e raio
+  if(rx == 0){
+      for(int j = 0;j < ny;j++){
+        for(int k = 0;k < nz;k++){
+          dist = pow(j - ycenter,2)/pow(ry,2) + pow(k - zcenter,2)/pow(rz, 2);
+          if(dist <= pow(radius, 2)){
+            putVoxel(xcenter,j,k);
+          }
+        }
+      }
+  }else if(ry == 0){
+    for(int i= 0;i < nx;i++){
+        for(int k = 0;k < nz;k++){
+          dist = pow(i - xcenter,2)/pow(rx,2) + pow(k - zcenter,2)/pow(rz, 2);
+          if(dist <= pow(radius, 2)){
+            putVoxel(i,ycenter,k);
+          }
+      }
+   }
+  }else if(rz == 0){
+    for(int i= 0;i < nx;i++){
+      for(int j = 0;j < ny;j++){
+        dist = pow(i - xcenter,2)/pow(rx,2) + pow(j - ycenter,2)/pow(ry,2);
+        if(dist <= pow(radius, 2)){
+          putVoxel(i,j,zcenter);
+          }
+        }
+      }
+  }else{
+    for(int i= 0;i < nx;i++){
+      for(int j = 0;j < ny;j++){
+        for(int k = 0;k < nz;k++){
+          dist = pow(i - xcenter,2)/pow(rx,2) + pow(j - ycenter,2)/pow(ry,2) + pow(k - zcenter,2)/pow(rz, 2);
+          if(dist <= 1){
+            putVoxel(i,j,k);
+          }
+        }
+      }
+   }
+  }
+};
+
+ void cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
      // e = (x - x0)^2/a^2 + (y - y0)^2/b^2 + (z - z0)^2/c^2  => formula da elipsoide e "e <= 1"
+  double dist; // variavel para teste do centro e raio
+  if(rx == 0){
+      for(int j = 0;j < ny;j++){
+        for(int k = 0;k < nz;k++){
+          dist = pow(j - ycenter,2)/pow(ry,2) + pow(k - zcenter,2)/pow(rz, 2);
+          if(dist <= pow(radius, 2)){
+            cutVoxel(xcenter,j,k);
+          }
+        }
+      }
+  }else if(ry == 0){
+    for(int i= 0;i < nx;i++){
+        for(int k = 0;k < nz;k++){
+          dist = pow(i - xcenter,2)/pow(rx,2) + pow(k - zcenter,2)/pow(rz, 2);
+          if(dist <= pow(radius, 2)){
+            cutVoxel(i,ycenter,k);
+          }
+      }
+   }
+  }else if(rz == 0){
+    for(int i= 0;i < nx;i++){
+      for(int j = 0;j < ny;j++){
+        dist = pow(i - xcenter,2)/pow(rx,2) + pow(j - ycenter,2)/pow(ry,2);
+        if(dist <= pow(radius, 2)){
+          cutVoxel(i,j,zcenter);
+          }
+        }
+      }
+  }else{
+    for(int i= 0;i < nx;i++){
+      for(int j = 0;j < ny;j++){
+        for(int k = 0;k < nz;k++){
+          dist = pow(i - xcenter,2)/pow(rx,2) + pow(j - ycenter,2)/pow(ry,2) + pow(k - zcenter,2)/pow(rz, 2);
+          if(dist <= 1){
+            cutVoxel(i,j,k);
+          }
+        }
+      }
+   }
+  }
+};
 
 
- };
+void Sculptor::writeOFF(const char *filename){
+    cout << "Criando e Abrindo um arquivo "<< "\n";
+   //Arestas = 0 pois não é necessario
+   //formato OFF
+   // x, y, z dos voxels, i indices dos vertices das faceis
 
-
- void Sculptor::writeOFF(const char* filename){
-     cout << "Criando e Abrindo um arquivo "<< "\n";
-     //Arestas = 0 pois não é necessario
-     //formato OFF
-     // x, y, z dos voxels, i indices dos vertices das faceis
-    int it; //
-    float lado =0.5; // tamanho do voxel;
+    int x, y, z, t, it; //variaveis usadas para as atualizações do arquivo;
+    float lado = 0.5;  // tamanho do voxel;
     ofstream f;
-    int t = 0; //voxel ativos
+    t = 0;
     f.open(filename);
     f << "OFF\n";
-    //buscar quantidade de voxels com isOn=True
-    for(int i = 0; i < nx; i++){
-        for(int j = 0; j < ny; j++){
-            for(int k = 0; k < nz; k++){
-                t++; //quantidade de voxels que deverão ser pintados
+    for(x = 0; x < nx; x++){
+        for(y = 0; y < ny; y++){
+            for(z = 0; z < nz; z++){
+                if(v[x][y][z].isOn){
+                    t++; //
+                }
             }
         }
-    }
-   //flush Sincroniza o buffer de fluxo associado com sua sequência de saída controlada.
-    f << t*8 << " " <<  t*6 << "0\n"; //quantidade de vertices, faceis e arestas
-    for(int i = 0; i < nx; i++){
-        for(int j = 0; j < ny; j++){
-            for(int k = 0; k < nz; k++){
-                if(v[i][j][k].isOn){
-                    f << i - lado << " " << j + lado << " " << k - lado <<"\n" << flush; //vertice 0 x-  y+  z-
-                    f << i - lado << " " << j + lado << " " << k + lado <<"\n" << flush; //vertice 1 x-  y+  z+
-                    f << i - lado << " " << j - lado << " " << k - lado <<"\n" << flush; //vertice 2 x-  y-  z-
-                    f << i + lado << " " << j + lado << " " << k - lado <<"\n" << flush; //vertice 3 x+  y+  z-
-                    f << i + lado << " " << j - lado << " " << k + lado <<"\n" << flush; //vertice 4 x+  y-  z+
-                    f << i - lado << " " << j + lado << " " << k + lado <<"\n" << flush; //vertice 5 x-  y+  z+
-                    f << i + lado << " " << j - lado << " " << k - lado <<"\n" << flush; //vertice 6 x+  y-  z-
-                    f << i + lado << " " << j + lado << " " << k + lado <<"\n" << flush; //vertice 7 x+  y+  z+
+     }
+
+    f << t*8 << " " << t*6 << " 0 \n"; //
+    for(x = 0; x < nx; x++){
+        for(y = 0; y < ny; y++){
+            for(z = 0; z < nz; z++){
+                if(v[x][y][z].isOn){
+                    f << x - lado << " " << y + lado << " " << z - lado << "\n" << flush; //Vertice 0 x- y+ z-
+                    f << x - lado << " " << y - lado << " " << z - lado << "\n" << flush; //Vertice 1 x- y- z-
+                    f << x + lado << " " << y - lado << " " << z - lado << "\n" << flush; //Vertice 2 x+ y- z- 
+                    f << x + lado << " " << y + lado << " " << z - lado << "\n" << flush; //Vertice 3 x+ y+ z-
+                    f << x - lado << " " << y + lado << " " << z + lado << "\n" << flush; //Vertice 4 x- y+ z+
+                    f << x - lado << " " << y - lado << " " << z + lado << "\n" << flush; //Vertice 5 x- y- z+
+                    f << x + lado << " " << y - lado << " " << z + lado << "\n" << flush; //Vertice 6 x+ y- z+
+                    f << x + lado << " " << y + lado << " " << z + lado << "\n" << flush; //Vertice 7 x+ y+ z+
                 }
             }
         }
     }
-    t = 0; // resetar a quantidade voxels
-    for(int i = 0; i < nx; i++){
-        for(int j = 0; j < ny; j++){
-            for(int k = 0; k < nz; k++){
-                if(v[i][j][k].isOn){
+
+    t = 0;      // resetar a quantidade voxels
+    for(x = 0; x < nx; x++){
+        for(y = 0; y < ny; y++){
+            for(z = 0; z < nz; z++){
+                if(v[x][y][z].isOn){
                     it = t*8;
                     // FACE 0
                     f << fixed;
                     f << 4 << " " << it + 0 << " " << it + 3 << " " << it + 2 << " " << it + 1 << " ";
-                    f << setprecision(2) << v[i][j][k].r << " " << setprecision(2) << v[i][j][k].g << " " << setprecision(2) << v[i][j][k].b << " " << setprecision(2) << v[i][j][k].a << "\n";
+                    f << setprecision(2) << v[x][y][z].r << " " << setprecision(2) << v[x][y][z].g << " " << setprecision(2) << v[x][y][z].b << " " << setprecision(2) << v[x][y][z].a << "\n";
                     // FACE 1
                     f << 4 << " " << it + 4 << " " << it + 5 << " " << it + 6 << " " << it + 7 << " ";
-                    f << setprecision(2) << v[i][j][k].r << " " << setprecision(2) << v[i][j][k].g << " " << setprecision(2) << v[i][j][k].b << " " << setprecision(2) << v[i][j][k].a << "\n";
+                    f << setprecision(2) << v[x][y][z].r << " " << setprecision(2) << v[x][y][z].g << " " << setprecision(2) << v[x][y][z].b << " " << setprecision(2) << v[x][y][z].a << "\n";
                     // FACE 2
-                    f << 4 << " " << it + 0 << " " << it+ 1 << " " << it + 5 << " " << it + 4 << " ";
-                    f << setprecision(2) << v[i][j][k].r << " " << setprecision(2) << v[i][j][k].g << " " << setprecision(2) << v[i][j][k].b << " " << setprecision(2) << v[i][j][k].a << "\n";
+                    f << 4 << " " << it + 0 << " " << it + 1 << " " << it + 5 << " " << it + 4 << " ";
+                    f << setprecision(2) << v[x][y][z].r << " " << setprecision(2) << v[x][y][z].g << " " << setprecision(2) << v[x][y][z].b << " " << setprecision(2) << v[x][y][z].a << "\n";
                     // FACE 3
                     f << 4 << " " << it + 0 << " " << it + 4 << " " << it + 7 << " " << it + 3 << " ";
-                    f << setprecision(2) << v[i][j][k].r << " " << setprecision(2) << v[i][j][k].g << " " << setprecision(2) << v[i][j][k].b << " " << setprecision(2) << v[i][j][k].a << "\n";
+                    f << setprecision(2) << v[x][y][z].r << " " << setprecision(2) << v[x][y][z].g << " " << setprecision(2) << v[x][y][z].b << " " << setprecision(2) << v[x][y][z].a << "\n";
                     // FACE 4
                     f << 4 << " " << it + 7 << " " << it + 6 << " " << it + 2 << " " << it + 3 << " ";
-                    f << setprecision(2) << v[i][j][k].r << " " << setprecision(2) << v[i][j][k].g << " " << setprecision(2) << v[i][j][k].b << " " << setprecision(2) << v[i][j][k].a << "\n";
+                    f << setprecision(2) << v[x][y][z].r << " " << setprecision(2) << v[x][y][z].g << " " << setprecision(2) << v[x][y][z].b << " " << setprecision(2) << v[x][y][z].a << "\n";
                     // FACE 5
-                    f << 4 << " " << it + 1 << " " << it+ 2 << " " << it + 6 << " " << it+ 5 << " ";
-                    f << setprecision(2) << v[i][j][k].r << " " << setprecision(2) << v[i][j][k].g << " " << setprecision(2) << v[i][j][k].b << " " << setprecision(2) << v[i][j][k].a << "\n";
-                    t++;  // acumulando o total de voxels
+                    f << 4 << " " << it + 1 << " " << it + 2 << " " << it + 6 << " " << it + 5 << " ";
+                    f << setprecision(2) << v[x][y][z].r << " " << setprecision(2) << v[x][y][z].g << " " << setprecision(2) << v[x][y][z].b << " " << setprecision(2) << v[x][y][z].a << "\n";
+                    t++; // acumulando o total de voxels
                 }
             }
         }
     }
     cout << "Arquivo Salvo!! \n" << endl;
     f.close();
-
- }
+}
