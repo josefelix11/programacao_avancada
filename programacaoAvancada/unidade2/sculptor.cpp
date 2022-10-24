@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <string>
-#include "Sculptor.h"
+#include "sculptor.h"
 
 using namespace std;
 
