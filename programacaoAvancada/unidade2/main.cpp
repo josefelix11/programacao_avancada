@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Sculptor.h"
+#include "sculptor.h"
 
 int main() {
   // cria um escultor cuja matriz tem 10x10x10 voxels
