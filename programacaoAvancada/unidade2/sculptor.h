@@ -1,8 +1,6 @@
 #ifndef SCULPTOR_H
 #define SCULPTOR_H
 
-#include <QObject>
-
 struct Voxel {
   float r,g,b; // Colors
   float a; // Transparency
