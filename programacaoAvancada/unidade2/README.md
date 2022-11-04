@@ -1,5 +1,5 @@
 <h1 align="center">Apresentação</h1>
-<p align="justify">Desenvolvido por Agostinho Brito</p>
+
 O objetivo desse projeto é construir uma ferramenta em C++ para realizar esculturas em blocos representados por matrizes digitais, algo como a ideia usada pelo jogo minecraft.
 
 A ideia é permitir que o utilizador da ferramenta seja capaz de criar um arquivo em texto simples que contém uma sequência de passos a serem seguidos para definir propriedades de uma matriz tridimensional. As propriedades contêm especificações de cor para os elementos, de sorte que com o auxílio de softwares de visualização o usuário possa apreciar a escultura criada.
@@ -206,3 +206,4 @@ Veja que os processo de alocação e liberação da memória devem ser previstos
 4.1. Criação de um programa de testes
 Elabore um pequeno programa de testes que explore o uso de TODAS os métodos especificados para desenvolver uma escultura digital e salvá-la no formatos OFF
 
+<p align="justify">@Desenvolvido por Agostinho Brito</p>
