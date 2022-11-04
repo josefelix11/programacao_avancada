@@ -34,36 +34,35 @@
 
 <p align="Justify">O tipo de dado Voxel é definido como um struct e comporta as propriedades necessárias para permitir armazenar três tipos de informações: a cor do voxel, sua transparência e se ele deverá ser incluído ou não no modelo digital que representa a escultura. A estrutura Voxel é definida na listagem Código fonte da estrutura Voxel.</p>
 
-Listagem 1. Código fonte da estrutura Voxel
+<h3 align="Justify">Listagem 1. Código fonte da estrutura Voxel</h3>
 
-<h4 align="center">     :construction:  
+  
  struct Voxel {
   float r,g,b; // Cores
   float a; // Trasnparencia
   bool show; // Incluido ou nao
-};  :construction:</h4>
+}; 
 
-A cor do voxel é armazenada nas propriedades r, g e b da estrutura. Cada uma das variáveis representam as dosagens de vermelho (red), verde (green) e azul (blue) usadas para compor uma cor específica. Essas dosagens necessariamente devem assumir valores na faixa [0,1], onde 0 denota ausência total da componente e 1 denota a presença total da componente de cor.
+<p align="Justify">A cor do voxel é armazenada nas propriedades r, g e b da estrutura. Cada uma das variáveis representam as dosagens de vermelho (red), verde (green) e azul (blue) usadas para compor uma cor específica. Essas dosagens necessariamente devem assumir valores na faixa [0,1], onde 0 denota ausência total da componente e 1 denota a presença total da componente de cor.</p>
 
-A propriedade de transparência, por sua vez, é definida pela variável a. Em computação gráfica, essa propriedade é normalmente denominada de canal alfa e deve assumir valores na faixa [0,1], onde 0 denota transparência total e 1 denota total opacidade.
+<p align="Justify">A propriedade de transparência, por sua vez, é definida pela variável a. Em computação gráfica, essa propriedade é normalmente denominada de canal alfa e deve assumir valores na faixa [0,1], onde 0 denota transparência total e 1 denota total opacidade.</p>
 
-Finalmente, a propriedade show define se o voxel correspondente deve ser incluído no arquivo digital que irá representar a escultura. Para ilustrar a ideia, considere o exemplo de uma matriz 3D de dimensões [2×2×2] voxels com as seguintes propriedades:
+<p align="Justify">Finalmente, a propriedade show define se o voxel correspondente deve ser incluído no arquivo digital que irá representar a escultura. Para ilustrar a ideia, considere o exemplo de uma matriz 3D de dimensões [2×2×2] voxels com as seguintes propriedades:</p>
 
 
-A escultura tridimensional correspondente ao conjunto de voxels com tais propriedades é mostrado na Figura Exemplo de Escultura.
+<p align="Justify">A escultura tridimensional correspondente ao conjunto de voxels com tais propriedades é mostrado na Figura Exemplo de Escultura.</p>
 
-paper
-Figura 1. Exemplo de escultura 3d para criada com uma matrix de 2×2×2 voxels
-2. Objetivos
-O que o desenvolvedor deverá implementar nesse projeto? A proposta é que a classe disponibilize uma série de métodos apropriados para realizar a escultura no bloco digital. Espera-se que um utilizador da classe seja capaz de desenhar ou apagar pelo menos três tipos de estruturas em uma escultura: blocos, voxels individuais e elipsóides, cujos métodos serão detalhados adiante.
 
-Em se tratando de um elemento abstrato, precisa-se de uma ferramenta de visualização para ser exibir a escultura no computador. Entre os programas que podem ser usados para visualização, destaca-se o geomview (www.geomview.org), livremente disponível em sistemas Unix. No Ubuntu, por exemplo, a instalação é quase trivial, pois ele se encontra presente na loja virtual de aplicativos. Para usuários de outros sistemas operacionais existe o meshlab (meshlab.sourceforge.net), que também é livre e está disponível para várias plataformas (inclusive android e ios).
+<h2 align="Justify">2. Objetivos<h2>
+<p align="Justify">O que o desenvolvedor deverá implementar nesse projeto? A proposta é que a classe disponibilize uma série de métodos apropriados para realizar a escultura no bloco digital. Espera-se que um utilizador da classe seja capaz de desenhar ou apagar pelo menos três tipos de estruturas em uma escultura: blocos, voxels individuais e elipsóides, cujos métodos serão detalhados adiante.</p>
 
-3. Formatos de armazenamento de modelos digitais
-Para ser visualizada, a representação da escultura digital deve ser armazenada um arquivo utilizando um formato suportado pela ferramenta de visualização. Diversos formatos de armazenamento de modelos tridimensionais podem ser usados, mas optamos pelo de um formato bastante simples, de fácil criação e entendimento, que é o formato OFF. Ambos são suportados pelo geomview ou meshlab, e pode ser usado para representar malhas tridimensionais na forma de polígonos planares. A Exemplo de Escultura, por exemplo, foi obtida a partir da representação dos voxels na forma de cubos coloridos armazenados no formato OFF.
+<p align="Justify">Em se tratando de um elemento abstrato, precisa-se de uma ferramenta de visualização para ser exibir a escultura no computador. Entre os programas que podem ser usados para visualização, destaca-se o geomview (www.geomview.org), livremente disponível em sistemas Unix. No Ubuntu, por exemplo, a instalação é quase trivial, pois ele se encontra presente na loja virtual de aplicativos. Para usuários de outros sistemas operacionais existe o meshlab (meshlab.sourceforge.net), que também é livre e está disponível para várias plataformas (inclusive android e ios).</p>
 
-3.1. O formato de armazenamento OFF
-O formato de armazenamento OFF é geralmente associados a arquivos com a extensão .off. Ele prevê a representação de superfícies usando conjuntos de vértices e polígonos que os interconectam. Para fins do projeto proposto, um arquivo OFF pode ser descrito da seguinte maneira:
+<h2 align="Justify">3. Formatos de armazenamento de modelos digitais</h2>
+<p align="Justify">Para ser visualizada, a representação da escultura digital deve ser armazenada um arquivo utilizando um formato suportado pela ferramenta de visualização. Diversos formatos de armazenamento de modelos tridimensionais podem ser usados, mas optamos pelo de um formato bastante simples, de fácil criação e entendimento, que é o formato OFF. Ambos são suportados pelo geomview ou meshlab, e pode ser usado para representar malhas tridimensionais na forma de polígonos planares. A Exemplo de Escultura, por exemplo, foi obtida a partir da representação dos voxels na forma de cubos coloridos armazenados no formato OFF.</p>
+
+<h2 align="Justify">3.1. O formato de armazenamento OFF<h2>
+<p align="Justify">O formato de armazenamento OFF é geralmente associados a arquivos com a extensão .off. Ele prevê a representação de superfícies usando conjuntos de vértices e polígonos que os interconectam. Para fins do projeto proposto, um arquivo OFF pode ser descrito da seguinte maneira:</p>
 
 OFF
 NVertices  NFaces  NArestas
@@ -74,17 +73,18 @@ Nv v[0] v[1] ... v[Nv-1]  r g b a
 Nv v[0] v[1] ... v[Nv-1]  r g b a
 ...
 Nv v[0] v[1] ... v[Nv-1]  r g b a
-A primeira linha contém apenas a palavra OFF, servindo para identificar o tipo do arquivo.
 
-A segunda linha especifica em números inteiros a quantidade de vértices (NVertices), faces (NFaces) e arestas (NArestas) que são representados ao todo na figura geométrica. O número de arestas normalmente não é utilizado pelas ferramentas de visualização podendo sempre assumir valor 0.
+ <p align="Justify">A primeira linha contém apenas a palavra OFF, servindo para identificar o tipo do arquivo.</p>
 
-A partir da terceira linha são apresentadas as coordenadas espaciais tridimensionais dos NVertices presentes na figura.
+<p align="Justify">A segunda linha especifica em números inteiros a quantidade de vértices (NVertices), faces (NFaces) e arestas (NArestas) que são representados ao todo na figura geométrica. O número de arestas normalmente não é utilizado pelas ferramentas de visualização podendo sempre assumir valor 0.</p>
 
-Seguindo as coordenadas vêm as especificações das faces. Cada face é definida por uma sequência de índices em uma linha do arquivo. O primeiro elemento da linha define o número de vértices na referida face. Em seguida, são apresentadas os índices dos NVertices vértices da face, bem como a cor da face no formato RGBA (Red, Green, Blue e Alpha). Cada cor é composta por um conjunto de quatro números em ponto flutuante na faixa [0,1], onde os três primeiros definem a cor da face (Red, Green, Blue) e o último define a sua transparência (0 para uma face totalmente transparente e 1 para uma face totalmente opaca).
+<p align="Justify">A partir da terceira linha são apresentadas as coordenadas espaciais tridimensionais dos NVertices presentes na figura.</p>
 
-Um fato importante sobre a especificação da face diz respeito à sequência em que os vértices são apresentados. O sentido do vetor normal a esta superfície é indicado pela regra da mão direita, onde os dedos acompanham a sequência fornecida (ver Figura 2) ). Cada sequência de pontos produz um polígono planar com duas faces opostas e, nos programas de visualização, a direção e sentido do vetor normal são usados para escolher e iluminar corretamente a face que se deseja exibir.
+<p align="Justify">Seguindo as coordenadas vêm as especificações das faces. Cada face é definida por uma sequência de índices em uma linha do arquivo. O primeiro elemento da linha define o número de vértices na referida face. Em seguida, são apresentadas os índices dos NVertices vértices da face, bem como a cor da face no formato RGBA (Red, Green, Blue e Alpha). Cada cor é composta por um conjunto de quatro números em ponto flutuante na faixa [0,1], onde os três primeiros definem a cor da face (Red, Green, Blue) e o último define a sua transparência (0 para uma face totalmente transparente e 1 para uma face totalmente opaca).</p>
 
-normal
+<p align="Justify">Um fato importante sobre a especificação da face diz respeito à sequência em que os vértices são apresentados. O sentido do vetor normal a esta superfície é indicado pela regra da mão direita, onde os dedos acompanham a sequência fornecida (ver Figura 2) ). Cada sequência de pontos produz um polígono planar com duas faces opostas e, nos programas de visualização, a direção e sentido do vetor normal são usados para escolher e iluminar corretamente a face que se deseja exibir.</p>
+
+
 Figura 2. Definição da normal à superfície pela regra da mão direita
 Para exemplificar a criação de um arquivo OFF, considere o cubo apresentado na Figura 3.
 
