@@ -2,7 +2,6 @@
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-# Índice * [Título e Imagem de capa](#Título-e-Imagem-de-capa)* [Badges](#badges)* [Índice](#índice)* [Descrição do Projeto](#descrição-do-projeto)* [Status do Projeto](#status-do-Projeto)* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)* [Acesso ao Projeto](#acesso-ao-projeto)* [Tecnologias utilizadas](#tecnologias-utilizadas)* [Pessoas Contribuidoras](#pessoas-contribuidoras)* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)* [Licença](#licença)* [Conclusão](#conclusão)
  
  ### Implementações Feitas pelo Sculptor
 
@@ -36,11 +35,14 @@
 <p align="Justify">O tipo de dado Voxel é definido como um struct e comporta as propriedades necessárias para permitir armazenar três tipos de informações: a cor do voxel, sua transparência e se ele deverá ser incluído ou não no modelo digital que representa a escultura. A estrutura Voxel é definida na listagem Código fonte da estrutura Voxel.</p>
 
 Listagem 1. Código fonte da estrutura Voxel
-struct Voxel {
+
+<h4 align="center">     :construction:  
+ struct Voxel {
   float r,g,b; // Cores
   float a; // Trasnparencia
   bool show; // Incluido ou nao
-};
+};  :construction:</h4>
+
 A cor do voxel é armazenada nas propriedades r, g e b da estrutura. Cada uma das variáveis representam as dosagens de vermelho (red), verde (green) e azul (blue) usadas para compor uma cor específica. Essas dosagens necessariamente devem assumir valores na faixa [0,1], onde 0 denota ausência total da componente e 1 denota a presença total da componente de cor.
 
 A propriedade de transparência, por sua vez, é definida pela variável a. Em computação gráfica, essa propriedade é normalmente denominada de canal alfa e deve assumir valores na faixa [0,1], onde 0 denota transparência total e 1 denota total opacidade.
