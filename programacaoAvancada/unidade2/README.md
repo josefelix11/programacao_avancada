@@ -9,7 +9,7 @@
 - ``Programação Avançada``
 
  
- ### Implementações Feitas pelo Sculptor
+ ### ✔️ Implementações Feitas pelo Sculptor
 
 - [X] Construtor da Classe 
 - [X] Destrutor
