@@ -1,6 +1,6 @@
 <h1 align="center">Apresentação</h1>
 
-![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=EM%20Concluido&color=GREEN&style=for-the-badge)
+![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=%20Concluido&color=BLUE&style=for-the-badge)
 
  
  ### Implementações Feitas pelo Sculptor
