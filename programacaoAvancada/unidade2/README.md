@@ -1,4 +1,6 @@
 <h1 align="center">Apresentação</h1>
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
  
  ### Implementações Feitas pelo Sculptor
 
@@ -22,14 +24,14 @@
 
 <p align="Justify">Os sistemas de escultura tridimensional prevêem alguns tipos de formas geométricas simples que poderão ser usadas pelo usuário para pintar e deverão ser implementadas no projeto.</p>
 
-###1.1. Parte 1 - Biblioteca de leitura e traçado de esculturas
-A primeira etapa do projeto consiste em conceber uma classe em C++ que permita realizar operações em uma matriz tridimensional alocada dinamicamente. Os elementos dessa matriz guardam propriedades da escultura e são denominados Voxels (volume elements), algo equivalente aos Pixels que comumente são usados em imagens digitais. Nos Voxels seria possível armazenar informações como cor e transparência, necessárias para idealizar os elementos de uma escultura.
+<h2 align="center">1.1. Parte 1 - Biblioteca de leitura e traçado de esculturas</h2>
+<p align="Justify">A primeira etapa do projeto consiste em conceber uma classe em C++ que permita realizar operações em uma matriz tridimensional alocada dinamicamente. Os elementos dessa matriz guardam propriedades da escultura e são denominados Voxels (volume elements), algo equivalente aos Pixels que comumente são usados em imagens digitais. Nos Voxels seria possível armazenar informações como cor e transparência, necessárias para idealizar os elementos de uma escultura.</p>
 
-As matrizes tridimensionais possuem dimensões de largura, altura e largura especificadas pelo usuário, onde os índices dos elementos nessa matriz coresponderiam às posições dos voxels no espaço discreto.
+<p align="Justify">As matrizes tridimensionais possuem dimensões de largura, altura e largura especificadas pelo usuário, onde os índices dos elementos nessa matriz coresponderiam às posições dos voxels no espaço discreto.</p>
 
-Por exemplo, para uma matriz de dimensões 2×3×4 elementos, sua representação em linguagem C++ poderia ser da forma Voxel m[2][3][4];. Essa matriz teria, portanto, um total de 24 voxels. Entretanto, é importante ressaltar que se trata apenas de um exemplo e que na implementação essa matriz seria alocada de forma dinâmica, com a quantidade de elementos em cada dimensão sendo fornecida pelo usuário.
+<p align="Justify">Por exemplo, para uma matriz de dimensões 2×3×4 elementos, sua representação em linguagem C++ poderia ser da forma Voxel m[2][3][4];. Essa matriz teria, portanto, um total de 24 voxels. Entretanto, é importante ressaltar que se trata apenas de um exemplo e que na implementação essa matriz seria alocada de forma dinâmica, com a quantidade de elementos em cada dimensão sendo fornecida pelo usuário.</p>
 
-O tipo de dado Voxel é definido como um struct e comporta as propriedades necessárias para permitir armazenar três tipos de informações: a cor do voxel, sua transparência e se ele deverá ser incluído ou não no modelo digital que representa a escultura. A estrutura Voxel é definida na listagem Código fonte da estrutura Voxel.
+<p align="Justify">O tipo de dado Voxel é definido como um struct e comporta as propriedades necessárias para permitir armazenar três tipos de informações: a cor do voxel, sua transparência e se ele deverá ser incluído ou não no modelo digital que representa a escultura. A estrutura Voxel é definida na listagem Código fonte da estrutura Voxel.</p>
 
 Listagem 1. Código fonte da estrutura Voxel
 struct Voxel {
