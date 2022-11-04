@@ -1,7 +1,4 @@
 <h1 align="center">Apresentação</h1>
-
-https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>&style=<STYLE>&logo=<LOGO>
-  
   
 O objetivo desse projeto é construir uma ferramenta em C++ para realizar esculturas em blocos representados por matrizes digitais, algo como a ideia usada pelo jogo minecraft.
 
@@ -208,5 +205,21 @@ Veja que os processo de alocação e liberação da memória devem ser previstos
 
 4.1. Criação de um programa de testes
 Elabore um pequeno programa de testes que explore o uso de TODAS os métodos especificados para desenvolver uma escultura digital e salvá-la no formatos OFF
+
+### Implementações Feitas pelo Sculptor
+
+- [X] Construtor da Classe 
+- [X] Destrutor
+- [X] Configurar cor do Voxel
+- [X] Limpar Voxel
+- [X] Criar Circulos
+- [X] Criar Esferas 
+- [X] Criar Elipses
+- [X] Limpar Elipse, circulo, Esfera
+
+
+  
+
+
 
 <p align="justify">@Desenvolvido por Agostinho Brito</p>
