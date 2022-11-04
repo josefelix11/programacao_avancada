@@ -2,6 +2,12 @@
 
 ![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=%20Concluido&color=GREEN&style=for-the-badge)
 
+## ✔️ Técnicas e tecnologias utilizadas
+
+- ``C++``
+- ``QT Creator e Vscode``
+- ``Programação Avançada``
+
  
  ### Implementações Feitas pelo Sculptor
 
