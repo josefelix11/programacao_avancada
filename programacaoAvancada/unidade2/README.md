@@ -60,7 +60,7 @@
 <h2 align="Justify">3. Formatos de armazenamento de modelos digitais</h2>
 <p align="Justify">Para ser visualizada, a representação da escultura digital deve ser armazenada um arquivo utilizando um formato suportado pela ferramenta de visualização. Diversos formatos de armazenamento de modelos tridimensionais podem ser usados, mas optamos pelo de um formato bastante simples, de fácil criação e entendimento, que é o formato OFF. Ambos são suportados pelo geomview ou meshlab, e pode ser usado para representar malhas tridimensionais na forma de polígonos planares. A Exemplo de Escultura, por exemplo, foi obtida a partir da representação dos voxels na forma de cubos coloridos armazenados no formato OFF.</p>
 
-<h2 align="Justify">3.1. O formato de armazenamento OFF<h2>
+<h2 align="Justify">3.1. O formato de armazenamento OFF</h2>
 <p align="Justify">O formato de armazenamento OFF é geralmente associados a arquivos com a extensão .off. Ele prevê a representação de superfícies usando conjuntos de vértices e polígonos que os interconectam. Para fins do projeto proposto, um arquivo OFF pode ser descrito da seguinte maneira:</p>
 
 OFF
