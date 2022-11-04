@@ -53,7 +53,6 @@
 <p align="Justify">A escultura tridimensional correspondente ao conjunto de voxels com tais propriedades é mostrado na Figura Exemplo de Escultura.</p>
 
 
-<h2 align="Justify">2. Objetivos<h2>
 <p align="Justify">O que o desenvolvedor deverá implementar nesse projeto? A proposta é que a classe disponibilize uma série de métodos apropriados para realizar a escultura no bloco digital. Espera-se que um utilizador da classe seja capaz de desenhar ou apagar pelo menos três tipos de estruturas em uma escultura: blocos, voxels individuais e elipsóides, cujos métodos serão detalhados adiante.</p>
 
 <p align="Justify">Em se tratando de um elemento abstrato, precisa-se de uma ferramenta de visualização para ser exibir a escultura no computador. Entre os programas que podem ser usados para visualização, destaca-se o geomview (www.geomview.org), livremente disponível em sistemas Unix. No Ubuntu, por exemplo, a instalação é quase trivial, pois ele se encontra presente na loja virtual de aplicativos. Para usuários de outros sistemas operacionais existe o meshlab (meshlab.sourceforge.net), que também é livre e está disponível para várias plataformas (inclusive android e ios).</p>
