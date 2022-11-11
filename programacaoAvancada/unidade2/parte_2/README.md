@@ -24,61 +24,56 @@
  
  
 <h1 align="justify">5. A classe Escultor - Parte 2 - Estruturas avançadas</h1>
-<p align="justify" backgroudcolor="gray">Seu projeto deverá ser capaz de tratar classes abstratas para manipulação de figuras geométricas simples, realizando operações de desenho em uma matriz de pontos.</p>
+<p align="justify">Seu projeto deverá ser capaz de tratar classes abstratas para manipulação de figuras geométricas simples, realizando operações de desenho em uma matriz de pontos. Para isso, a estrutura criada para a classe Sculptor deverá ser repensada e uma nova classe chamada FiguraGeometrica entrará como participante do processo de desenho. Não serão criados objetos dessa nova classe, mas ela agora será a base para várias outras classes concretas, que proverão funcionalidades semelhantes àquelas providas pela classe Sculptor do projeto anterior.</p>
 
-Para isso, a estrutura criada para a classe Sculptor deverá ser repensada e uma nova classe chamada FiguraGeometrica entrará como participante do processo de desenho.
-
-Não serão criados objetos dessa nova classe, mas ela agora será a base para várias outras classes concretas, que proverão funcionalidades semelhantes àquelas providas pela classe Sculptor do projeto anterior.
 
 <h2 align="justify">5.1. Criação da classe abstrata FiguraGeometrica</h2>
-Crie uma classe abstrata FiguraGeometrica para representar objetos primitivos genéricos, e preveja para esta classe pelo menos uma característica:
-
-Uma função virtual pura draw(Sculptor &t) que instrua o objeto a se desenhar em um objeto do tipo Sculptor. Essa função deverá ser implementada nas subclasses da classe FiguraGeometrica.
+<p align="justify">Crie uma classe abstrata FiguraGeometrica para representar objetos primitivos genéricos, e preveja para esta classe pelo menos uma característica: Uma função virtual pura draw(Sculptor &t) que instrua o objeto a se desenhar em um objeto do tipo Sculptor. Essa função deverá ser implementada nas subclasses da classe FiguraGeometrica.</p>
 
 <h2 align="justify">5.2. Criação da classe concreta PutVoxel</h2>
-Crie uma classe PutVoxel derivada de FiguraGeometrica. Um voxel deverá ser especificado para desenho conforme sua posição no espaco, sua cor e transparência.
+<p align="justify">Crie uma classe PutVoxel derivada de FiguraGeometrica. Um voxel deverá ser especificado para desenho conforme sua posição no espaco, sua cor e transparência.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.3. Criação da classe concreta CutVoxel</h2>
-Crie uma classe CutVoxel derivada de FiguraGeometrica. Um voxel deverá ser especificado para remoção conforme sua posição no espaco.
+<p align="justify">Crie uma classe CutVoxel derivada de FiguraGeometrica. Um voxel deverá ser especificado para remoção conforme sua posição no espaco.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.4. Criação da classe concreta PutBox</h2>
-Crie uma classe PutBox derivada de FiguraGeometrica. Uma caixa deverá ser especificada para desenho conforme os limites espaciais fornecidos para as três dimensões, sua cor e transparência.
+<p align="justify">Crie uma classe PutBox derivada de FiguraGeometrica. Uma caixa deverá ser especificada para desenho conforme os limites espaciais fornecidos para as três dimensões, sua cor e transparência.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.5. Criação da classe concreta CutBox</h2>
-Crie uma classe CutBox derivada de FiguraGeometrica. Uma caixa deverá ser especificada para remoção conforme os limites espaciais fornecidos.
+<p align="justify">Crie uma classe CutBox derivada de FiguraGeometrica. Uma caixa deverá ser especificada para remoção conforme os limites espaciais fornecidos.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.6. Criação da classe concreta PutSphere</h2>
-Crie uma classe PutSphere derivada de FiguraGeometrica. Uma esfera deverá ser especificada para desenho conforme a posição do centro, seu raio em pixels, bem como sua cor e transparência.
+<p align="justify">Crie uma classe PutSphere derivada de FiguraGeometrica. Uma esfera deverá ser especificada para desenho conforme a posição do centro, seu raio em pixels, bem como sua cor e transparência.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.7. Criação da classe concreta CutSphere</h2>
-Crie uma classe CutSphere derivada de FiguraGeometrica. Uma esfera deverá ser especificada para remoção conforme a posição do centro e seu raio em pixels.
+<p align="justify">Crie uma classe CutSphere derivada de FiguraGeometrica. Uma esfera deverá ser especificada para remoção conforme a posição do centro e seu raio em pixels.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h1 align="justify">5.8. Criação da classe concreta PutEllipsoid</h2>
-Crie uma classe PutEllipsoid derivada de FiguraGeometrica. Uma esfera deverá ser especificada para desenho conforme a posição do centro, seus raios em pixels, bem como sua cor e transparência.
+<p align="justify">Crie uma classe PutEllipsoid derivada de FiguraGeometrica. Uma esfera deverá ser especificada para desenho conforme a posição do centro, seus raios em pixels, bem como sua cor e transparência.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.9. Criação da classe concreta CutEllipsoid</h2>
-Crie uma classe CutEllipsoid derivada de FiguraGeometrica. Uma esfera deverá ser especificada para remoção conforme a posição do centro e seus raios em pixels.
+<p align="justify">Crie uma classe CutEllipsoid derivada de FiguraGeometrica. Uma esfera deverá ser especificada para remoção conforme a posição do centro e seus raios em pixels.</p>
 
-O método draw(Sculptor &t) deverá ser implementado.
+<p align="justify">O método draw(Sculptor &t) deverá ser implementado.</p>
 
 <h2 align="justify">5.10. Armazenamento de figuras</h2>
-Prepare um recurso para ler figuras gravadas em um arquivo e desenhá-las conforme as instruções presentes. O arquivo poderá conter os seguintes códigos, que deverão ser interpretados pela sua aplicação e utilizar a classe abstrata FiguraGeometrica para tratar e gerar o desenho conforme os códigos utilizados na tabela Tabela 2.
+<p align="justify">Prepare um recurso para ler figuras gravadas em um arquivo e desenhá-las conforme as instruções presentes. O arquivo poderá conter os seguintes códigos, que deverão ser interpretados pela sua aplicação e utilizar a classe abstrata FiguraGeometrica para tratar e gerar o desenho conforme os códigos utilizados na tabela Tabela 2.</p>
 
-O arquivo conterá várias dessas linhas, cada uma contendo uma instrução orientando o tipo de desenho que se deseja realizar na sequência. Logo, novo programa lerá esse arquivo e criará um arquivo de saída no formato OFF contendo o desenho conceptualizado no arquivo fornecido.
+<p align="justify">O arquivo conterá várias dessas linhas, cada uma contendo uma instrução orientando o tipo de desenho que se deseja realizar na sequência. Logo, novo programa lerá esse arquivo e criará um arquivo de saída no formato OFF contendo o desenho conceptualizado no arquivo fornecido.</p>
 
 
 
