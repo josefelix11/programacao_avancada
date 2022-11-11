@@ -1,6 +1,6 @@
 <h1 align="center">Apresentação</h1>
 
-![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=%20Concluido&color=GREEN&style=for-the-badge)
+![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=%20Construindo&color=GREEN&style=for-the-badge)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
@@ -43,11 +43,18 @@
 <h3 align="Justify">Listagem 1. Código fonte da estrutura Voxel</h3>
 
   
+````
+```
+
  struct Voxel {
   float r,g,b; // Cores
   float a; // Trasnparencia
   bool show; // Incluido ou nao
 }; 
+
+
+```
+````
 
 <p align="Justify">A cor do voxel é armazenada nas propriedades r, g e b da estrutura. Cada uma das variáveis representam as dosagens de vermelho (red), verde (green) e azul (blue) usadas para compor uma cor específica. Essas dosagens necessariamente devem assumir valores na faixa [0,1], onde 0 denota ausência total da componente e 1 denota a presença total da componente de cor.</p>
 
@@ -69,6 +76,11 @@
 <h2 align="Justify">3.1. O formato de armazenamento OFF</h2>
 <p align="Justify">O formato de armazenamento OFF é geralmente associados a arquivos com a extensão .off. Ele prevê a representação de superfícies usando conjuntos de vértices e polígonos que os interconectam. Para fins do projeto proposto, um arquivo OFF pode ser descrito da seguinte maneira:</p>
 
+
+  
+````
+```
+
 OFF
 NVertices  NFaces  NArestas
 x[0]  y[0]  z[0]
@@ -78,6 +90,11 @@ Nv v[0] v[1] ... v[Nv-1]  r g b a
 Nv v[0] v[1] ... v[Nv-1]  r g b a
 ...
 Nv v[0] v[1] ... v[Nv-1]  r g b a
+
+
+
+```
+````
 
  <p align="Justify">A primeira linha contém apenas a palavra OFF, servindo para identificar o tipo do arquivo.</p>
 
@@ -99,14 +116,22 @@ $P(x,y,z)$
 Figura 3. Representação de um cubo com centro no ponto .
 As faces deste cubo seriam definidas então pelas seguintes sequências de vértices:
 
+````
+```
 Face 1: P0 P3 P2 P1
 Face 2: P4 P5 P6 P7
 Face 3: P0 P1 P5 P4
 Face 4: P0 P4 P7 P3
 Face 5: P7 P6 P2 P3
 Face 6: P1 P2 P6 P5
+
+```
+````
+
 Para um cubo de lado de tamanho igual a 1, com centro no ponto e faces opacas desenhadas na cor branca, sua representação no formato OFF seria dada pelo arquivo com o seguinte conteúdo:
 
+````
+```
 OFF
 8 6 0
 -0.5 0.5 -0.5
@@ -123,6 +148,9 @@ OFF
 4 0 4 7 3 1.0 1.0 1.0 1.0
 4 3 7 6 2 1.0 1.0 1.0 1.0
 4 1 2 6 5 1.0 1.0 1.0 1.0
+```
+````
+
 Neste arquivo, o modelo 3d possui 8 vértices e 6 faces declarados. O número de arestas igual a zero não é utilizado.
 
 Perceba que, para construir uma estrutura com outros cubos como esse, o programador deverá observar que a sequência dos índices dos próximos cubos será semelhante ao do primeiro, acrescentando-se, porém, 8 unidades ao cubo anterior, oriundas dos novos grupos de vértices para os cubos que serão representados.
@@ -132,6 +160,10 @@ Ainda, as quantidades de vértices e faces previstas no cabeçalho do arquivo se
 4. A classe Escultor - Parte 1 - Estruturas básicas
 Para manipular os pixels da matriz tridimensional, o desenvolvedor deverá usar um conjunto de funcionalidades previstas para uma classe denominada Sculptor que deverá possuir a seguinte declaração:
 
+
+
+````
+```
 class Sculptor {
 private:
   Voxel ***v; // 3D matrix
@@ -151,10 +183,17 @@ public:
   void cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz);
   void writeOFF(const char* filename);
 };
+```
+````
+
+
 Cada um dos métodos da classe Sculptor realiza uma modificação específica na matriz de voxels definida pela variável v. A descrição de cada um desses métodos é apresentada na Tabela 1
 
 Tabela 1. Métodos da classe Sculptor
 Método	Descrição
+
+````
+```
 Sculptor(int _nx, int _ny, int _nz)
 
 Construtor da classe
@@ -201,6 +240,8 @@ Desativa todos os voxels que satisfazem à equação do elipsóide
 void writeOFF(const char* filename)
 
 grava a escultura no formato OFF no arquivo filename
+```
+````
 
 Desses métodos apresentados, o método writeOFF() merece uma explicação mais detalhada acerca da forma como ele representará a escultura digital.
 
@@ -214,28 +255,28 @@ Portanto, é tarefa do método writeOFF() criar um arquivo de computador escrito
 
 O uso da classe Sculptor é mostrado no exemplo seguinte:
 
-  // cria um escultor cuja matriz tem 10x10x10 voxels
-  Sculptor trono(10,10,10);
-  // para mudar a cor do voxel
-  trono.setColor(0,0,1.0,1.0); // azul
-  // ativa os voxels na faixa de [x,y,z] pertencendo a [0-9]
-  trono.putBox(0,9,0,9,0,9);
-  // desativa os voxels na faixa de [x,y,z] pertencendo a [0-9]
-  trono.cutBox(1,8,1,9,1,9);
-  // grava a escultura digital no arquivo "trono.off"
-  trono.writeOFF("trono.off");
+````
+```
+ // cria um escultor cuja matriz tem 10x10x10 voxels
+ Sculptor trono(10,10,10);
+ // para mudar a cor do voxel
+ trono.setColor(0,0,1.0,1.0); // azul
+ // ativa os voxels na faixa de [x,y,z] pertencendo a [0-9]
+ trono.putBox(0,9,0,9,0,9);
+ // desativa os voxels na faixa de [x,y,z] pertencendo a [0-9]
+ trono.cutBox(1,8,1,9,1,9);
+ // grava a escultura digital no arquivo "trono.off"
+ trono.writeOFF("trono.off");
+  
+ ```
+ ````
+ 
 $P(x,y,z)$
 Figura 4. Representação a figura trono.off.
 Veja que os processo de alocação e liberação da memória devem ser previstos no construtor e destrutor da classe Sculptor.
 
 4.1. Criação de um programa de testes
-Elabore um pequeno programa de testes que explore o uso de TODAS os métodos especificados para desenvolver uma escultura digital e salvá-la no formatos OFF
-
-
-
-
-  
-
+Elabore um pequeno programa de testes que explore o uso de TODAS os métodos especificados para desenvolver uma escultura digital e salvá-la no formatos OFF.
 
 
 <p align="justify" font-family="Arial">@Desenvolvido por José Felix</p>
