@@ -43,11 +43,18 @@
 <h3 align="Justify">Listagem 1. Código fonte da estrutura Voxel</h3>
 
   
+ ````
+```
+
  struct Voxel {
   float r,g,b; // Cores
   float a; // Trasnparencia
   bool show; // Incluido ou nao
 }; 
+
+
+```
+````
 
 <p align="Justify">A cor do voxel é armazenada nas propriedades r, g e b da estrutura. Cada uma das variáveis representam as dosagens de vermelho (red), verde (green) e azul (blue) usadas para compor uma cor específica. Essas dosagens necessariamente devem assumir valores na faixa [0,1], onde 0 denota ausência total da componente e 1 denota a presença total da componente de cor.</p>
 
