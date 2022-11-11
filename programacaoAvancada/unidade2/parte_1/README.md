@@ -41,6 +41,39 @@ graph TD;
 ```
  
  
+ ```stl
+solid cube_corner
+  facet normal 0.0 -1.0 0.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 1.0 0.0 0.0
+      vertex 0.0 0.0 1.0
+    endloop
+  endfacet
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 0.0 1.0 0.0
+      vertex 1.0 0.0 0.0
+    endloop
+  endfacet
+  facet normal -1.0 0.0 0.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 0.0 0.0 1.0
+      vertex 0.0 1.0 0.0
+    endloop
+  endfacet
+  facet normal 0.577 0.577 0.577
+    outer loop
+      vertex 1.0 0.0 0.0
+      vertex 0.0 1.0 0.0
+      vertex 0.0 0.0 1.0
+    endloop
+  endfacet
+endsolid
+```
+ 
 <p align="Justify">O objetivo desse projeto é construir uma ferramenta em C++ para realizar esculturas em blocos representados por matrizes digitais, algo como a ideia usada pelo jogo minecraft, tal projeto foi pensado pelo <i>Professor Agostinho Brito</i> para fazer os seus alunos pensarem fora da caixa e conhecerem um mundo onde as possibilidades são infinitas.</p>
 
 <p align="Justify">A ideia é permitir que o utilizador da ferramenta seja capaz de criar um arquivo em texto simples que contém uma sequência de passos a serem seguidos para definir propriedades de uma matriz tridimensional. As propriedades contêm especificações de cor para os elementos, de sorte que com o auxílio de softwares de visualização o usuário possa apreciar a escultura criada.</p>
