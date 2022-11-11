@@ -22,6 +22,24 @@
 - [X] Criar Arquivo .Off com informações da figura. 
  
  
+ ```mermaid
+graph TD;
+    main-->sculptor.h;
+    sculptor.h-->voxel.h;
+    sulcptor.h-->sculptor.cpp;
+    sculptor.cpp-->setColor;
+    sculptor.cpp-->putVoxel;
+    sculptor.cpp-->cutVoxel;
+    sculptor.cpp-->putVoxel;
+    sculptor.cpp-->putBox;
+    sculptor.cpp-->cutBox;
+    sculptor.cpp-->putSphere;
+    sculptor.cpp-->cutSphere;
+    sculptor.cpp-->putEllipsoid;
+    sculptor.cpp-->cutEllipsoid;
+    sculptor.cpp-->whiteOFF;
+```
+ 
  
 <p align="Justify">O objetivo desse projeto é construir uma ferramenta em C++ para realizar esculturas em blocos representados por matrizes digitais, algo como a ideia usada pelo jogo minecraft, tal projeto foi pensado pelo <i>Professor Agostinho Brito</i> para fazer os seus alunos pensarem fora da caixa e conhecerem um mundo onde as possibilidades são infinitas.</p>
 
