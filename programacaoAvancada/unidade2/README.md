@@ -23,7 +23,7 @@
  
  
  
-<p align="Justify">O objetivo desse projeto é construir uma ferramenta em C++ para realizar esculturas em blocos representados por matrizes digitais, algo como a ideia usada pelo jogo minecraft, tal projeto foi pensado pelo Professor Agostinho Brito para fazer os seus alunos pensarem fora da caixa e conhecerem um mundo onde as possibilidades são infinitas.</p>
+<p align="Justify">O objetivo desse projeto é construir uma ferramenta em C++ para realizar esculturas em blocos representados por matrizes digitais, algo como a ideia usada pelo jogo minecraft, tal projeto foi pensado pelo ###Professor Agostinho Brito### para fazer os seus alunos pensarem fora da caixa e conhecerem um mundo onde as possibilidades são infinitas.</p>
 
 <p align="Justify">A ideia é permitir que o utilizador da ferramenta seja capaz de criar um arquivo em texto simples que contém uma sequência de passos a serem seguidos para definir propriedades de uma matriz tridimensional. As propriedades contêm especificações de cor para os elementos, de sorte que com o auxílio de softwares de visualização o usuário possa apreciar a escultura criada.</p>
 
