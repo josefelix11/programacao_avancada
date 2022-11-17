@@ -2,33 +2,35 @@
 #include <cstdlib>
 #include <fstream>
 #include <string>
-#include "sculptor.h"
-#include "interpretador.h"
+#include "Sculptor.h"
+#include "Interpretador.h"
 
 
 using namespace std;
 
 int main()
 {
-    Sculptor *nave;
+    cout << "Inicializando o Programa!!!" << endl;
+    Sculptor *fig;
     Interpretador parser;
     vector<FiguraGeometrica*> figuras;
 
-    figuras = parser.parse("sculptor.txt");
+    figuras = parser.parse("hat.txt");
 
-    nave = new Sculptor(parser.getDx(), parser.getDy(), parser.getDz());
+    fig = new Sculptor(parser.getDx(), parser.getDy(), parser.getDz());
 
     for(size_t i = 0; i < figuras.size(); i++){
-        figuras[i] -> draw(*nave);
+        figuras[i] -> draw(*fig);
     }
 
-    nave -> writeOFF((char*)"nave.off");
+    cout << "Criando Arquivo OFF \n" << endl; 
+    fig -> writeOFF((char*)"hat.off");
 
     for(size_t i = 0; i < figuras.size(); i++){
         delete figuras[i];
     }
 
-    delete nave;
+    delete fig;
     return 0;
 
 }
