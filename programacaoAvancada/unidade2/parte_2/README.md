@@ -11,15 +11,14 @@
  
  ### ✔️ Implementações Feitas pelo Sculptor
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Criação da classe abstrata FiguraGeometrica
+- [x] Criação da classe concreta PutVoxel
+- [x] Criação da classe concreta CutVoxel
+- [x] Criação da classe concreta PutBox
+- [x] Criação da classe concreta CutBox
+- [x] Criação da classe concreta CutSphere
+- [x] Criação da classe concreta PutEllipsoid
+- [x] Armazenamento de figuras
  
  
  
