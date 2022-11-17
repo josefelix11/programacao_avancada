@@ -2,8 +2,8 @@
 #include <cstdlib>
 #include <fstream>
 #include <string>
-#include "Sculptor.h"
-#include "Interpretador.h"
+#include "sculptor.h"
+#include "interpretador.h"
 
 
 using namespace std;
