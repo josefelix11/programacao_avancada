@@ -27,9 +27,19 @@
 
  ```mermaid
 graph TD;
-    figurageometrica.h-->sculptor.h;
-    figurageometrica.h-->sculptor.cpp;
-    figurageometrica.h-->main.cpp;
+    main.cpp-->sculptor.h;
+    main.cpp-->sculptor.cpp;
+    sculptor.h-->figurageometrica.h;
+    sculptor.cpp-->figurageometrica.h;
+    sculptor.h-->voxel;
+    figurageometrica-->putVoxel;
+    figurageometrica-->cutVoxel;
+    figurageometrica-->putBox;
+    figurageometrica-->cutBox;
+    figurageometrica-->putSphere;
+    figurageometrica-->cutSphere;
+    figurageometrica-->putEllipsoid;
+    figurageometrica-->cutEllipsoid;
 ```
 
 
