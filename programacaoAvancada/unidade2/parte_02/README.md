@@ -32,14 +32,14 @@ graph TD;
     sculptor.h-->figurageometrica.h;
     sculptor.cpp-->figurageometrica.h;
     sculptor.h-->voxel;
-    figurageometrica-->putVoxel;
-    figurageometrica-->cutVoxel;
-    figurageometrica-->putBox;
-    figurageometrica-->cutBox;
-    figurageometrica-->putSphere;
-    figurageometrica-->cutSphere;
-    figurageometrica-->putEllipsoid;
-    figurageometrica-->cutEllipsoid;
+    figurageometrica.h-->putVoxel;
+    figurageometrica.h-->cutVoxel;
+    figurageometrica.h-->putBox;
+    figurageometrica.h-->cutBox;
+    figurageometrica.h-->putSphere;
+    figurageometrica.h-->cutSphere;
+    figurageometrica.h-->putEllipsoid;
+    figurageometrica.h-->cutEllipsoid;
 ```
 
 
