@@ -12,7 +12,7 @@
 
 <p align="justify">Considere-se à vontade para criar o programa conforme suas próprias idealizações, mas que a construção permite que esse seja utilizável por alguém que deseje trabalhar com as funções de sua classe Sculptor.</p>
 
-<h1 align="justify">Será exigido que seu programa realize as seguintes tarefas:</h1>
+<h1 align="justify">✔️ Será exigido que seu programa realize as seguintes tarefas:</h1>
 
 - [ ] Criar uma abstração de um objeto da classe Sculptor com dimensões fornecidas pelo usuário
 - [ ] Permitir que o usuário visualize o objeto criado utilizando algum artifício
