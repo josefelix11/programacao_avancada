@@ -1,4 +1,4 @@
-![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=%20Construindo&color=GREEN&style=for-the-badge)
+![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=%20Construindo&color=BLUE&style=for-the-badge)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
