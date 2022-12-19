@@ -10,10 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    sculptor.cpp \
+    visaoxy.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    sculptor.h \
+    visaoxy.h
 
 FORMS += \
     mainwindow.ui
