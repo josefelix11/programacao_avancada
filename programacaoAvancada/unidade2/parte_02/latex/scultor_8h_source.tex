@@ -1,0 +1,29 @@
+\hypertarget{scultor_8h_source}{}\doxysection{scultor.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SCULTOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SCULTOR\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Voxel.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_scultor}{Scultor}}\{}
+\DoxyCodeLine{13 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{struct_voxel}{Voxel}} ***v; \textcolor{comment}{// Matrix 3D}}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} nx,ny,nz; \textcolor{comment}{// Dimensões}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{float} r,g,b,a; \textcolor{comment}{// Propriedades do Voxel}}
+\DoxyCodeLine{17     \textcolor{keywordtype}{float} fix;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_scultor}{Scultor}}(\textcolor{keywordtype}{int} nx1, \textcolor{keywordtype}{int} ny1, \textcolor{keywordtype}{int} nz1);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_scultor_a8f200855fa7b8b68d40ce7f5ea1e5a9e}{\string~Scultor}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scultor_acfc45ec4c80e07cc6a039d8653cda9d3}{setColor}}(\textcolor{keywordtype}{float} r1, \textcolor{keywordtype}{float} g1, \textcolor{keywordtype}{float} b1, \textcolor{keywordtype}{float} alpha);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scultor_a05feb784120b4b1e22676476252320b7}{putVoxel}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scultor_afff15a4da2511cc6229128a8f1dbea52}{cutVoxel}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} z);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} getx();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} gety();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} getz();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scultor_aebedc2e2e7ef187acbfdc259df107b3f}{writeOFF}}(\textcolor{keywordtype}{char} *filename);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SCULTOR\_H}}
+
+\end{DoxyCode}

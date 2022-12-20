@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+
+int main(){
+  float aloha[10], coisas[10][5], *pf, value = 2.2;
+  int i=3;
+  
+  // aloha[2] = value; // expressão inválida pois a saida será null\nan
+  //scanf("%f", &aloha);
+  //aloha = value"; // Expressão inválida pois o array é um array de float
+  //printf("%f", aloha);
+  //coisas[4][4] = aloha[3]; // coisas está recebendo a letra H.
+  //printf("x= %c \n", coisas[4][4]);
+  //coisas[5] = aloha;// expressão invalida pois coisas é uma matriz e não um vetor
+  //pf = value; // incompatibilidade de tipo pois
+  //pf = aloha; //pf esta recebendo um simbolo ao invés da palavra aloha
+  //printf("x= %c \n", pf);
+
+  return 0;
+}

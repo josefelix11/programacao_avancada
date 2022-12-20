@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="93.342857mm"
+   height="62.228569mm"
+   viewBox="0 0 93.342857 62.228569"
+   version="1.1"
+   id="svg1537"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="cutvoxel.svg"
+   inkscape:export-filename="cutvoxel.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1539"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.46769781"
+     inkscape:cx="135.77143"
+     inkscape:cy="145.39303"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1534" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-65.622856,-110.31429)">
+    <rect
+       style="fill:#000000;stroke-width:0.264583"
+       id="rect1543"
+       width="93.342857"
+       height="62.228569"
+       x="65.622856"
+       y="110.31429" />
+    <rect
+       style="fill:#f9f9f9;stroke-width:0.264583"
+       id="rect1703"
+       width="72.41143"
+       height="33.942863"
+       x="76.371422"
+       y="125.58857" />
+  </g>
+</svg>
